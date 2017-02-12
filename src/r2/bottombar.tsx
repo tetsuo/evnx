@@ -1,8 +1,9 @@
 import * as React from "react"
-import {inject, observer} from "mobx-react"
+import {inject, observer, Provider} from "mobx-react"
 import {Tab, Tabs, TabList, TabPanel} from "react-tabs"
 import {Console, IConsoleProps} from "./console"
 import {State} from "./state"
+import {EvaluationView} from "../ide/evaluation-view"
 
 const styles = require("./bottombar.scss")
 
@@ -27,9 +28,11 @@ export class Bottombar extends React.Component<IBottombarProps, void> {
             return null
         }
 
-        const {currentChannelId} = state
+        const {editorStates, currentChannelId} = state
 
         const shortName = "#" + currentChannelId.slice(0, 12)
+
+        const editorState = editorStates[currentChannelId]
 
         return <div className={styles.bottombar}>
             <div className={styles.tabs}>
@@ -49,7 +52,11 @@ export class Bottombar extends React.Component<IBottombarProps, void> {
                     </TabPanel>
 
                     <TabPanel>
-                        TODO
+                        <Provider editorState={editorState}>
+                            <div className={styles.output}>
+                                <EvaluationView />
+                            </div>
+                        </Provider>
                     </TabPanel>
 
                 </Tabs>
