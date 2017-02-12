@@ -1,10 +1,10 @@
 {
-  "name": "evan-lang",
+  "name": "evanup",
   "version": "0.1.0",
-  "description": "A vaguely Lispy language in the context of JavaScript",
+  "description": "a vaguely lispy language in the context of javascript",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dslmeinte/evan-lang.git"
+    "url": "https://github.com/evanup/evan.git"
   },
   "bin": {
     "evan": "cmd.js"
