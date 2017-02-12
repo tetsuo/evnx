@@ -13,7 +13,7 @@
   "typings": "lib/index",
   "scripts": {
     "test": "npm run build && tape lib/test/*.js lib/**/test/*.js | tap-diff",
-    "test-watch": "npm run build && concurrently --raw \"npm run watch\" \"tape-watch lib/test/*.js lib/**/test/*.js -p tap-diff\" --kill-others",
+    "test-watch": "npm run build && npm run watch & tape-watch lib/test/*.js lib/**/test/*.js -p tap-diff",
     "karma": "karma start --log-level error",
     "karma-watch": "WATCH=true karma start --log-level error",
     "clean": "rm -fr lib && rm -f public/bundle.js",
@@ -22,12 +22,10 @@
     "watch": "npm run clean && tsc --watch",
     "build-ide": "NODE_ENV=production browserify -p tsify -r ud/noop:ud src/ide/main.tsx | uglifyjs -c > public/bundle.js",
     "watch-ide": "watchify src/ide/main.tsx -p browserify-hmr -p tsify -o public/bundle.js -dv",
-    "ide": "npm run clean && concurrently --raw \"ecstatic -p 8070 public\" \"npm run watch-ide\" --kill-others",
-    "build-r2": "NODE_ENV=production browserify -p tsify -r ud/noop:ud -r chloride/browser:chloride src/r2/main.tsx | bundle-collapser | uglifyjs -cm > public/bundle.js",
-    "watch-r2-hmr": "watchify src/r2/main.tsx -p browserify-hmr -p tsify -r chloride/browser:chloride -o public/bundle.js -dv",
-    "watch-r2": "watchify src/r2/main.tsx -p tsify -r chloride/browser:chloride -r ud/noop:ud -o public/bundle.js -dv",
-    "r2": "npm run clean && concurrently --raw \"ecstatic -p 8070 public\" \"npm run watch-r2\" --kill-others",
-    "r2-hmr": "npm run clean && concurrently --raw \"ecstatic -p 8070 public\" \"npm run watch-r2-hmr\" --kill-others"
+    "ide": "npm run clean && ecstatic -p 8070 public & npm run watch-ide",
+    "build-r2": "NODE_ENV=production browserify -p tsify -r chloride/browser:chloride src/r2/main.tsx | bundle-collapser | uglifyjs -cm > public/bundle.js",
+    "watch-r2": "watchify src/r2/main.tsx -p tsify -r chloride/browser:chloride -o public/bundle.js -dv",
+    "r2": "npm run clean && ecstatic -p 8070 public & npm run watch-r2"
   },
   "contributors": [
     "Meinte Boersma <meinte.boersma@gmail.com> (http://www.dslconsultancy.com/)",
@@ -57,7 +55,6 @@
     "browserify-hmr": "^0.3.5",
     "bundle-collapser": "^1.2.1",
     "chloride": "^2.2.4",
-    "concurrently": "^3.1.0",
     "debug": "^2.6.0",
     "ecstatic": "^2.1.0",
     "electron-webrtc": "^0.3.0",
@@ -66,7 +63,7 @@
     "hyperlog": "^4.12.0",
     "hyperlog-sodium": "^2.0.0",
     "insert-css": "^2.0.0",
-    "insert-sass": "^0.1.0",
+    "insert-sass": "^0.2.0",
     "jsdom": "^9.9.1",
     "karma": "^1.4.0",
     "karma-browserify": "^5.1.0",
@@ -80,7 +77,6 @@
     "mobx": "^2.6.1",
     "mobx-react": "^3.5.6",
     "ndjson": "^1.5.0",
-    "node-sass": "^4.3.0",
     "pump": "^1.0.2",
     "randombytes": "^2.0.3",
     "react-addons-test-utils": "^15.4.2",
@@ -111,6 +107,7 @@
         "insert-sass",
         {
           "includePaths": [
+            "src/r2/",
             "src/ide/editor/",
             "src/ide/",
             "src/"
