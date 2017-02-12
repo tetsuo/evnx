@@ -5,7 +5,7 @@ import {
 } from "mobx-react"
 import {computed} from "mobx"
 import strftime = require("strftime")
-import {State, ILogDataKind, ILogMessageData} from "./state"
+import {State, ILogDataKind, ILogData} from "./state"
 import {STATUS} from "./util"
 import {ILog} from "./swarm"
 
@@ -14,7 +14,7 @@ const styles = require("./console.scss")
 const LINK_PATTERN = RegExp("((?:https?:|magnet:|ssb:|/ipfs/)\\S+)")
 const LINK_PART_PATTERN = RegExp("^" + LINK_PATTERN.source)
 
-export type IMessageLog = ILog<ILogMessageData>
+export type IMessageLog = ILog<ILogData>
 
 export type IConsoleProps = {
     state?: State
@@ -109,7 +109,7 @@ export class Console extends React.Component<IConsoleProps, void> {
                     </div>
 
                     <div className={styles.cmdline}>
-                        <div className={styles.info}>
+                        <div className={styles.status}>
                             <span>{`[${strftime("%T", new Date)}]`}</span>
                             <span>{`[${user}]`}</span>
                             <span>{`[${currentChannelId}]`}</span>
@@ -135,7 +135,12 @@ export function printRow(row: IMessageLog, key: string) {
     const time = strftime("%T", new Date(row.time))
     const parts = row.data.msg.split(LINK_PATTERN)
 
-    return <div className={styles.line} key={key}>
+    const wrapperClassNames = [styles.line]
+    if (row.data.kind === ILogDataKind.Info) {
+        wrapperClassNames.push(styles.info)
+    }
+
+    return <div className={wrapperClassNames.join(" ")} key={key}>
         <span className={styles.time}>{time}</span>
         <span className={styles.user}>{`<${row.user}>`}</span>
         <span className={styles.message}>
