@@ -2,7 +2,7 @@ import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {BaseEditWidget} from "../base-edit-widget";
-import {IValueReference} from "../../../description";
+import {IValueReference} from "../../description";
 
 
 @inject("editorState") @observer

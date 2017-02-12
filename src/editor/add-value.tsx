@@ -4,7 +4,7 @@ import * as React from "react";
 import {EditorState, FocusType} from "./state";
 import {preventBubbleUp} from "./utils/ui-util";
 
-import {default as metaModelInstance} from "../instance";
+import {default as metaModelInstance} from "../ide/instance"; // TODO: nope
 const sTypes = metaModelInstance.sTypes();
 
 const styles = require("./styles.scss");

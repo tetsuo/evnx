@@ -2,8 +2,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import {observer, Provider} from "mobx-react";
-import {EditorState} from "./editor/state";
-import {EditorView} from "./editor/view";
+import {EditorState} from "../editor/state";
+import {EditorView} from "../editor/view";
 import {EvaluationView} from "./evaluation-view";
 
 import {browser} from "./external-objects/browser";

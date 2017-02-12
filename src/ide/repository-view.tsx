@@ -2,9 +2,9 @@ import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {exampleRepository} from "./external-objects/example-repository";
-import {EditorState} from "./editor/state";
+import {EditorState} from "../editor/state";
 
-const styles = require("./editor/styles.scss");
+const styles = require("../editor/styles.scss");
 
 export type IRepositoryViewProps = {
 	editorState?: EditorState

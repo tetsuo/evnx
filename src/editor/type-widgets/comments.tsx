@@ -1,7 +1,7 @@
 import {observer, inject} from "mobx-react";
 import * as React from "react";
 
-import {IComments} from "../../../description";
+import {IComments} from "../../description";
 import {BaseEditWidget} from "../base-edit-widget";
 
 const styles = require("../styles.scss");

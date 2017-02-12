@@ -3,7 +3,7 @@ import * as React from "react";
 
 import {preventBubbleUp} from "./utils/ui-util";
 
-import {default as metaModelInstance} from "../instance";
+import {default as metaModelInstance} from "../ide/instance"; // TODO: nope
 const sTypes = metaModelInstance.sTypes();
 
 const styles = require("./styles.scss");
@@ -30,7 +30,7 @@ export class TypeSelector extends React.Component<ITypeSelectorProps, void> {
 				<option value="json-array" key="json-array">array: []</option>,
 				<option value="json-object" key="json-object">object: {"{}"}</option>,
 				<option value="json-simple-value" key="json-simple-value">simple value: ...</option>
-				{sTypes.map(sType => <option value={sType} key={sType}>{sType}</option>)}
+				{sTypes.map((sType: any) => <option value={sType} key={sType}>{sType}</option>)}
 			</select>
 		);
 	}
