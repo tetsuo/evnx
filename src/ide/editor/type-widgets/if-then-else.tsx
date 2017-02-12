@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {makePropertyAccessor} from "../utils/accessor";
@@ -9,7 +9,7 @@ import {IIfThenElse} from "../../../description";
 const styles = require("../styles.scss");
 
 
-@observer
+@inject("editorState") @observer
 export class IfThenElse extends BaseEditWidget<IIfThenElse> {
 
 	renderContents(ifThenElse: IIfThenElse) {

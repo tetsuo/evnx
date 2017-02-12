@@ -1,16 +1,23 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {exampleRepository} from "./external-objects/example-repository";
-import {editorState} from "./editor/state";
+import {EditorState} from "./editor/state";
 
 const styles = require("./editor/styles.scss");
 
+export type IRepositoryViewProps = {
+	editorState?: EditorState
+};
 
-@observer
-export class RepositoryView extends React.Component<{}, {}> {
-
+@inject("editorState") @observer
+export class RepositoryView extends React.Component<IRepositoryViewProps, {}> {
 	render() {
+		const {editorState} = this.props;
+		if (!editorState) {
+			return null;
+		}
+
 		return (
 			<div className={styles.resourcesPane}>
 				<span>Resource:&nbsp;</span>
@@ -28,8 +35,11 @@ export class RepositoryView extends React.Component<{}, {}> {
 	}
 
 	handleChange() {
-		const path = (this.refs as any).resourceSelector.value;
-		editorState.setResource(path, exampleRepository.resourceByPath(path));
+		const {editorState} = this.props;
+		if (editorState) {
+			const path = (this.refs as any).resourceSelector.value;
+			editorState.setResource(path, exampleRepository.resourceByPath(path));
+		}
 	}
 
 }

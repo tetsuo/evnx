@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {BaseEditWidget} from "../base-edit-widget";
@@ -6,7 +6,7 @@ import {makePropertyAccessor} from "../utils/accessor";
 import {IIssue} from "../../../description";
 
 
-@observer
+@inject("editorState") @observer
 export class Issue extends BaseEditWidget<IIssue> {
 
 	renderContents(issue: IIssue) {

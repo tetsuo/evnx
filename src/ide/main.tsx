@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import {editorState} from "./editor/state";
+import {observer, Provider} from "mobx-react";
+import {EditorState} from "./editor/state";
 import {EditorView} from "./editor/view";
 import {EvaluationView} from "./evaluation-view";
 
@@ -9,6 +10,7 @@ import {browser} from "./external-objects/browser";
 import {exampleRepository} from "./external-objects/example-repository";
 import {RepositoryView} from "./repository-view";
 
+const editorState = new EditorState;
 
 if (location.hash) {
 	const path = browser.uriHash();
@@ -20,15 +22,18 @@ if (location.hash) {
 	}
 }
 
-class IDE extends React.Component<void, void> {
+@observer
+class IDE extends React.Component<any, void> {
 	render() {
 		return (
-			<div>
-				<RepositoryView />
-				<hr />
-				<EditorView />
-				<EvaluationView />
-			</div>
+				<Provider editorState={editorState}>
+					<div>
+						<RepositoryView />
+						<hr />
+						<EditorView />
+						<EvaluationView />
+					</div>
+				</Provider>
 		);
 	}
 }

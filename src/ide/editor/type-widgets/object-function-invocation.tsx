@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {makePropertyAccessor, makeArrayAccessor} from "../utils/accessor";
@@ -9,7 +9,7 @@ import {IObjectFunctionInvocation} from "../../../description";
 const styles = require("../styles.scss");
 
 
-@observer
+@inject("editorState") @observer
 export class ObjectFunctionInvocation extends BaseEditWidget<IObjectFunctionInvocation> {
 
 	renderContents(objectFunctionInvocation: IObjectFunctionInvocation) {

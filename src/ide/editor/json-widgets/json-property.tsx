@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {dispatch} from "../dispatcher";
@@ -9,7 +9,7 @@ import {IJsonProperty} from "../utils/json-property-util";
 import {EditableStringWidget} from "../editable-string-widget";
 
 
-@observer
+@inject("editorState") @observer
 export class JsonProperty extends BaseEditWidget<IJsonProperty> {
 
 	renderContents(property: IJsonProperty) {

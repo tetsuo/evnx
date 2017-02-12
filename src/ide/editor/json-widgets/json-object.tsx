@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {JsonProperty} from "./json-property";
@@ -8,7 +8,7 @@ import {preventBubbleUp} from "../utils/ui-util";
 
 const styles = require("../styles.scss");
 
-@observer
+@inject("editorState") @observer
 export class JsonObject<T extends Object> extends BaseEditWidget<T> {
 
 	renderContents(object: T) {

@@ -1,11 +1,11 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {BaseEditWidget} from "../base-edit-widget";
 import {IValueReference} from "../../../description";
 
 
-@observer
+@inject("editorState") @observer
 export class ValueReference extends BaseEditWidget<IValueReference> {
 
 	renderContents(valueReference: IValueReference) {

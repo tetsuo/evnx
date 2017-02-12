@@ -3,13 +3,16 @@ import * as React from "react";
 import {IWithAccessor} from "./utils/accessor";
 import {type} from "./utils/object-util";
 import {TypeSelector} from "./type-selector";
-import {editorState, FocusType} from "./state";
+import {EditorState, FocusType} from "./state";
 import {preventBubbleUp} from "./utils/ui-util";
 
 const styles = require("./styles.scss");
 
-export abstract class BaseEditWidget<T> extends React.Component<IWithAccessor<T>, void> {
+export type IBaseEditorWidgetProps = {
+	editorState?: EditorState;
+};
 
+export abstract class BaseEditWidget<T> extends React.Component<IWithAccessor<T> & IBaseEditorWidgetProps, void> {
 	abstract renderContents(value: T): void;
 
 	render() {
@@ -28,14 +31,26 @@ export abstract class BaseEditWidget<T> extends React.Component<IWithAccessor<T>
 	}
 
 	isSelected() {
+		const {editorState} = this.props;
+		if (!editorState) {
+			return;
+		}
 		return editorState.itemFocused === this && editorState.focusType === FocusType.selected;
 	}
 
 	isBeingEdited() {
+		const {editorState} = this.props;
+		if (!editorState) {
+			return;
+		}
 		return editorState.itemFocused === this && editorState.focusType === FocusType.editing;
 	}
 
 	exitEdit() {
+		const {editorState} = this.props;
+		if (!editorState) {
+			return;
+		}
 		if (editorState.itemFocused === this) {
 			editorState.itemFocused = FocusType.selected;
 		}
@@ -47,6 +62,10 @@ export abstract class BaseEditWidget<T> extends React.Component<IWithAccessor<T>
 	 * Intended to be used in React onClick defs as 'editorState.actionSelectItem(this)'.
 	 */
 	private handleFocusClick<E>(e: React.SyntheticEvent<E>) {
+		const {editorState} = this.props;
+		if (!editorState) {
+			return;
+		}
 		if (editorState.itemFocused === this) {
 			editorState.focusType = FocusType.editing;
 		} else if (editorState.itemFocused !== FocusType.editing) {
@@ -57,6 +76,10 @@ export abstract class BaseEditWidget<T> extends React.Component<IWithAccessor<T>
 	}
 
 	private genericClassName() {
+		const {editorState} = this.props;
+		if (!editorState) {
+			return;
+		}
 		return styles.widget + " " + ( editorState.itemFocused === this ? styles.focused : "" );
 	}
 

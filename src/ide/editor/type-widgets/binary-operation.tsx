@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {BaseEditWidget} from "../base-edit-widget";
@@ -7,7 +7,7 @@ import {dispatch} from "../dispatcher";
 import {IBinaryOperation} from "../../../description";
 
 
-@observer
+@inject("editorState") @observer
 export class BinaryOperation extends BaseEditWidget<IBinaryOperation> {
 
 	renderContents(binaryOperation: IBinaryOperation) {

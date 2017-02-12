@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {BaseEditWidget} from "../base-edit-widget";
@@ -7,7 +7,7 @@ import {SimpleValue, SimpleType, toInfo, coerce, fromString, nothing} from "../u
 const styles = require("../styles.scss");
 
 
-@observer
+@inject("editorState") @observer
 export class JsonSimpleValue extends BaseEditWidget<SimpleValue> {
 
 	renderContents(value: SimpleValue) {

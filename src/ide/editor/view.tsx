@@ -1,16 +1,24 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {dispatch} from "./dispatcher";
-import {editorState} from "./state";
+import {EditorState} from "./state";
 
 const styles = require("./styles.scss");
 
+export type IEditorViewProps = {
+	editorState?: EditorState
+};
 
-@observer
-export class EditorView extends React.Component<{}, {}> {
+@inject("editorState") @observer
+export class EditorView extends React.Component<IEditorViewProps, {}> {
 
 	render() {
+		const {editorState} = this.props;
+		if (!editorState) {
+			return null;
+		}
+
 		const {jsonData} = editorState;
 		return (
 			<div className={styles.editorPane}>

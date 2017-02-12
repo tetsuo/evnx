@@ -1,7 +1,7 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
-import {editorState, FocusType} from "./state";
+import {EditorState, FocusType} from "./state";
 import {preventBubbleUp} from "./utils/ui-util";
 
 import {default as metaModelInstance} from "../instance";
@@ -9,10 +9,13 @@ const sTypes = metaModelInstance.sTypes();
 
 const styles = require("./styles.scss");
 
+export type IAddValueProps = {
+	addCallback: (newValue: any) => void;
+	editorState?: EditorState;
+};
 
-@observer
-export class AddValue extends React.Component<{ addCallback: (newValue: any) => void; }, { creating: boolean; }> {
-
+@inject("editorState") @observer
+export class AddValue extends React.Component<IAddValueProps, { creating: boolean; }> {
 	constructor() {
 		super();
 		this.state = { creating: false };
@@ -44,6 +47,11 @@ export class AddValue extends React.Component<{ addCallback: (newValue: any) => 
 	}
 
 	initiateAdd<T>(e: React.SyntheticEvent<T>) {
+		const {editorState} = this.props;
+		if (!editorState) {
+			throw new Error("state is undefined");
+		}
+
 		if (editorState.itemFocused) {
 			if (editorState.focusType === FocusType.editing) {
 				return;

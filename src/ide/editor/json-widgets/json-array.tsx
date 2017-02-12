@@ -1,4 +1,4 @@
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 import * as React from "react";
 
 import {dispatch} from "../dispatcher";
@@ -11,7 +11,7 @@ import {BaseEditWidget} from "../base-edit-widget";
 const styles = require("../styles.scss");
 
 
-@observer
+@inject("editorState") @observer
 export class JsonArray<T> extends BaseEditWidget<ArrayLike<T>> {
 
 	renderContents(array: ArrayLike<T>) {
