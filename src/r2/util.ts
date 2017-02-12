@@ -3,6 +3,7 @@ export const INFO = "!info"
 const VERSION = "2"
 export const DB = "r2." + VERSION
 export const KEYCHAIN = "!!ident"
+export const NONE = "none"
 
 const randomBytes = require("randombytes")
 const cl = require("chloride")

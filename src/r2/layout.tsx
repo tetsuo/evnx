@@ -7,7 +7,7 @@ import {Sidebar} from "./sidebar"
 import {Console} from "./console"
 import {Bottombar} from "./bottombar"
 import {Modeler} from "./modeler"
-import {STATUS} from "./util"
+import {STATUS, NONE} from "./util"
 import {State} from "./state"
 
 const styles = require("./layout.scss")
@@ -33,6 +33,10 @@ export class Layout extends React.Component<ILayoutProps, void> {
         } = this.props
 
         const {currentChannelId} = state
+
+        if (currentChannelId === NONE) {
+            return null
+        }
 
         return (
             <FlexLayout fill="window">

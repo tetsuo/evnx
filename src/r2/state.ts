@@ -28,7 +28,7 @@ export class State {
 
     constructor(db: LevelUp) {
         xtend(this, {
-            currentChannel: { id: "none", public: "" },
+            currentChannel: { id: util.NONE, public: "" },
             user: "user-" + util.getRandomString(2),
             channels: [],
             logs: {},
