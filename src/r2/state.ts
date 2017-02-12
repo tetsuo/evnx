@@ -5,6 +5,7 @@ import m = require("mobx")
 import {extendObservable as xtend} from "mobx"
 import util = require("./util")
 import {ILog, IKeyPair, Swarm} from "./swarm"
+import {EditorState} from "../editor/state"
 
 export class State {
     currentChannel: IIndexedKeyPair
@@ -16,6 +17,7 @@ export class State {
     lastSeen: { [channel: string]: number }
     keypairs: { [channel: string]: IKeyPair }
     peers: { [channel: string]: string[] }
+    editorStates: { [channel: string]: EditorState }
 
     @m.computed get currentChannelId(): string {
         return this.currentChannel && this.currentChannel.id
@@ -36,7 +38,8 @@ export class State {
             connectionStatus: {},
             peers: {},
             lastSeen: {},
-            keypairs: {}
+            keypairs: {},
+            editorStates: {}
         })
 
         const free = m.intercept(this, "currentChannel", (change) => { // prehook
@@ -100,7 +103,8 @@ export class State {
             connectionStatus,
             lastSeen,
             keypairs,
-            user
+            user,
+            editorStates
         } = this
 
         const idents: IIndexedKeyPair[] = Array.isArray(identity) ? identity : [ identity ]
@@ -153,6 +157,10 @@ export class State {
                     xtend(keypairs, {
                         [channel]: { public: ident.public, private: ident.private }
                     })
+                }
+
+                if (!editorStates.hasOwnProperty(channel)) {
+                    editorStates[channel] = new EditorState
                 }
 
                 if (channel !== util.STATUS) {
