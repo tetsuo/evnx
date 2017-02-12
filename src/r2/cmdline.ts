@@ -38,7 +38,7 @@ export class CommandLine {
         })
     }
 
-    private handleHelp() {
+    handleHelp() {
         const {state} = this.opts
         state.help(state.currentChannelId, help.main)
     }

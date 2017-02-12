@@ -28,6 +28,8 @@ class Main extends React.Component<IMainProps, void> {
         this.cmdline = new CommandLine(this.props)
     }
 
+    private isHelpPrinted: boolean = false
+
     handleRoute = (route: string) => {
         let channel = route.replace(/[\s\xa0]+/g, "") // remove whitespace
         const {state, keychain, swarm} = this.props
@@ -36,6 +38,11 @@ class Main extends React.Component<IMainProps, void> {
 
         if (!channel) {
             state.currentChannel = util.statusKeyPair
+
+            if (!this.isHelpPrinted) {
+                this.isHelpPrinted = true
+                this.cmdline.handleHelp()
+            }
         } else {
             keychain.get(channel, (er, keypair?) => {
                 if (er) {
