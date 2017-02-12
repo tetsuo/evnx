@@ -17,8 +17,9 @@ module.exports = function(config) {
 				[ "tsify" ]
 			],
 			configure: function(bundle) {
-				bundle.require(require("ud/noop"), { expose: "ud" });
 				bundle.on("prebundle", function() {
+					bundle.require(require("ud/noop"), { expose: "ud" });
+					bundle.require(require("chloride/browser"), { expose: "chloride" }) // only required for r2
 					bundle.external("react/addons");
 					bundle.external("react/lib/ReactContext");
 					bundle.external("react/lib/ExecutionEnvironment");

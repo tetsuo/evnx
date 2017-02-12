@@ -1,0 +1,22 @@
+.bottombar {
+    height: 100%;
+    overflow: hidden;
+
+    .tabs {
+        height: 100%;
+
+        :global(.react-tabs) {
+            height: 100%;
+
+            ul {
+                padding: 0;
+                margin: 0;
+            }
+
+            div[role="tabpanel"] {
+                height: calc(100% - 30px);
+            }
+
+        }
+    }
+}
