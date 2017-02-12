@@ -21,7 +21,7 @@
     "prepublish": "npm run test && npm run build && npm run build-r2",
     "watch": "npm run clean && tsc --watch",
     "build-ide": "NODE_ENV=production browserify -p tsify -r ud/noop:ud src/ide/main.tsx | uglifyjs -c > public/bundle.js",
-    "watch-ide": "watchify src/ide/main.tsx -p browserify-hmr -p tsify -o public/bundle.js -dv",
+    "watch-ide": "watchify src/ide/main.tsx -p browserify-hmr -p [ tsify --sourceMap ] -o public/bundle.js -dv",
     "ide": "npm run clean && ecstatic -p 8070 public & npm run watch-ide",
     "build-r2": "NODE_ENV=production browserify -p tsify -r chloride/browser:chloride src/r2/main.tsx | bundle-collapser | uglifyjs -cm > public/bundle.js",
     "watch-r2": "watchify src/r2/main.tsx -p [ tsify --sourceMap ] -r chloride/browser:chloride -o public/bundle.js -dv",
