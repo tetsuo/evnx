@@ -2,6 +2,7 @@
 	"version": "2.1.4",
 	"compilerOptions": {
 		"declaration": true,
+		"sourceMap": true,
 		"module": "commonjs",
 		"outDir": "lib",
 		"target": "es5",
@@ -16,11 +17,12 @@
 		"suppressImplicitAnyIndexErrors": true,
 		"strictNullChecks": true
 	},
-	"files": [
+	"include": [
 		"src/index.ts",
-		"src/bin/cmd.ts",
+		"src/cmd.ts",
+		"src/test/*.ts",
 		"src/ide/main.tsx",
-		"src/test/evan.ts",
-		"src/test/meta-model.ts"
+		"src/r2/main.tsx",
+		"src/r2/test/*.ts"
 	]
 }

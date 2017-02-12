@@ -1,6 +1,6 @@
-# evan: EValuation of Abstract Nodes
+# Evan: EValuation of Abstract Nodes
 
-a vaguely lispy language in the context of js.
+A vaguely Lispy language in the context of JavaScript.
 
 The Evan language is implemented by means of an *evaluator*, which transforms *any* JSON into a JavaScript value. Often, this is again JSON but it can also be React DOM elements which are then rendered into a browser.
 
@@ -8,7 +8,7 @@ The evaluation is in principle functional, in the sense that evaluating the same
 
 Also, the evaluation is wired to happen incremental (using [mobx](https://github.com/mobxjs/mobx)), so (small) changes to the JSON input should only require a partial re-evaluation for better performance.
 
-# development
+# Development
 
 The main goal of the *Evan programming language* is to bootstrap a working, functional-style general purpose programming language which nestles comfortably in the JavaScript-world, complete with tools like an IDE.
 
@@ -18,7 +18,7 @@ The IDE should (eventually) be implemented as an Evan program itself, making it 
 
 To get started with development, clone this repository and run `npm install` or `yarn`, or whatever :)
 
-# npm scripts
+# NPM scripts
 
 Type `npm run NAME` to execute any of the commands below:
 
@@ -35,7 +35,7 @@ Type `npm run NAME` to execute any of the commands below:
 | `watch-ide` | build ide browser bundle in watch-mode
 | `ide` | start a development server at [http://localhost:8070](http://localhost:8070) and run `watch-ide` in parallel
 
-# usage
+# Usage
 
 ```
 evan FILE OPTIONS
@@ -47,7 +47,7 @@ Options:
   -h, --help     Show this message.
 ```
 
-# documentation
+# Documentation
 
 * [What's been added recently](./docs/updates.md)
 * [How to contribute](./docs/contributing.md)
@@ -55,11 +55,11 @@ Options:
 * [A primordial design](./docs/design.md)
 * [The _External Objects_ mechanism](./docs/external-objects.md)
 
-# about the name
+# About the name
 
 As you've probably already noticed, the "Evan" acronym is awkward. That's because is retrofitted to the name of Meinte's first-born :)
 
 
-# license
+# License
 
-mit
+MIT

@@ -1,5 +1,5 @@
 module.exports = function(config) {
-	const files = "src/test/browser/**/*.ts*";
+	const files = "src/**/test/browser/*.ts*";
 
 	config.set({
 		basePath: "",
@@ -17,8 +17,9 @@ module.exports = function(config) {
 				[ "tsify" ]
 			],
 			configure: function(bundle) {
-				bundle.require(require("ud/noop"), { expose: "ud" });
 				bundle.on("prebundle", function() {
+					bundle.require(require("ud/noop"), { expose: "ud" });
+					bundle.require(require("chloride/browser"), { expose: "chloride" }) // only required for r2
 					bundle.external("react/addons");
 					bundle.external("react/lib/ReactContext");
 					bundle.external("react/lib/ExecutionEnvironment");
@@ -27,7 +28,7 @@ module.exports = function(config) {
 		},
 		reporters: ["tap-pretty"],
 		tapReporter: {
-			prettifier: "tap-diff",
+			prettify: require("tap-diff"),
 			separator: true
 		},
 		port: 9876,

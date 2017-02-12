@@ -1,0 +1,40 @@
+@import "vars";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0px;
+  font-family: Monaco;
+  font-size: 12px;
+}
+
+*:focus {
+  outline: none;
+}
+
+input, button {
+  font-family: Monaco;
+}
+
+:global(.LayoutSplitter) {
+	opacity: 1;
+	background-color: $global-layout-splitter-bgcolor;
+	&:hover {
+		transition: none;
+		-webkit-transition: none;
+		background-color: #000;
+		opacity: .2;
+	}
+}
+
+.content {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: $content-bgcolor;
+}

@@ -3,9 +3,9 @@
     "align": [
       true,
       "parameters",
-      "arguments",
       "statements"
     ],
+    "adjacent-overload-signatures": true,
     "ban": false,
     "class-name": true,
     "comment-format": [
@@ -17,39 +17,32 @@
     "forin": false,
     "indent": [
       true,
-      "tabs"
+      "spaces"
     ],
-    "interface-name": [ true ],
+    "interface-name": [true, "always-prefix"],
     "jsdoc-format": true,
     "label-position": true,
-    "label-undefined": true,
-    "max-line-length": [
-      true,
-      180
-    ],
+    "linebreak-style": [true, "LF"],
+    "max-file-line-count": [true, 9999],
     "member-access": false,
     "member-ordering": [
-      true,
-      "public-before-private",
-      "static-before-instance",
-      "variables-before-functions"
+       true
     ],
     "no-angle-bracket-type-assertion": true,
     "no-any": false,
     "no-arg": true,
     "no-bitwise": true,
     "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": [ false ],
-    "no-console": [ false ],
+    "no-consecutive-blank-lines": [false],
     "no-construct": true,
-    "no-constructor-vars": false,
     "no-debugger": true,
-    "no-duplicate-key": true,
+    "no-default-export": true,
     "no-duplicate-variable": true,
     "no-empty": true,
     "no-eval": true,
-    "no-inferrable-types": [ false ],
+    "no-inferrable-types": [false],
     "no-internal-module": true,
+    "no-invalid-this": false,
     "no-null-keyword": false,
     "no-require-imports": false,
     "no-shadowed-variable": false,
@@ -57,13 +50,9 @@
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-    "no-unused-variable": [
-      true,
-      "react"
-    ],
     "no-use-before-declare": true,
+    "no-unused-variable": true,
     "no-var-keyword": true,
-    "no-var-requires": false,
     "object-literal-sort-keys": false,
     "one-line": [
       true,
@@ -80,7 +69,7 @@
       "avoid-escape"
     ],
     "radix": true,
-    "semicolon": [true, "always"],
+    "semicolon": [true, "never"],
     "switch-default": true,
     "trailing-comma": [
       true,
@@ -92,8 +81,7 @@
     "triple-equals": true,
     "typedef": [
       true,
-      "property-declaration",
-      "member-variable-declaration"
+      "property-declaration"
     ],
     "typedef-whitespace": [
       true,
@@ -112,12 +100,12 @@
         "variable-declaration": "space"
       }
     ],
-    "use-strict": false,
     "variable-name": [
       true,
+      "ban-keywords",
       "check-format",
       "allow-leading-underscore",
-      "ban-keywords"
+      "allow-pascal-case"
     ],
     "whitespace": [
       true,
