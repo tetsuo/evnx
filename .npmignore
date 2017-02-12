@@ -1,7 +1,6 @@
 src/
 node_modules/
 tmp/
-public/
 fixtures/
 .vscode/
 karma.conf.js
