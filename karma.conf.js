@@ -1,5 +1,5 @@
 module.exports = function(config) {
-	const files = "src/test/browser/**/*.ts*";
+	const files = "src/**/test/browser/*.ts*";
 
 	config.set({
 		basePath: "",
@@ -27,7 +27,7 @@ module.exports = function(config) {
 		},
 		reporters: ["tap-pretty"],
 		tapReporter: {
-			prettifier: "tap-diff",
+			prettify: require("tap-diff"),
 			separator: true
 		},
 		port: 9876,
