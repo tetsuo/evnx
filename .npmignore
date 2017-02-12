@@ -1,0 +1,13 @@
+src/
+node_modules/
+tmp/
+public/
+fixtures/
+.vscode/
+karma.conf.js
+tslint.json
+tsconfig.json
+lib/r2/
+lib/ide/
+lib/test/
+docs/

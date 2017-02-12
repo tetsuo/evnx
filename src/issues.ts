@@ -1,4 +1,4 @@
-import {IIssue} from "./semantics";
+import {IIssue} from "./description";
 import {util} from "./util";
 
 /**

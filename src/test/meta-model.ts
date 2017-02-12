@@ -4,11 +4,11 @@ import { SemanticsNode } from "../meta-model";
 const split = require("split2");
 const ndjson = require("ndjson");
 
-const file1 = __dirname + "/../../semantics.json";
+const file1 = __dirname + "/../../description.json";
 
 // This test assumes that you have already generated the typings file.
 // See: node lib/bin/cmd.js --help
-const file2 = __dirname + "/../../fixtures/semantics.ts";
+const file2 = __dirname + "/../../src/description.ts";
 
 test("semantics", t => {
 	fs.createReadStream(file1).pipe(split()).pipe(ndjson.parse())

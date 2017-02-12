@@ -1,7 +1,7 @@
 import {util} from "../../../util";
 import {IObservableArray, isArrayLike} from "mobx";
 
-import {ISemanticsTyped} from "../../../semantics";
+import {ISemanticsTyped} from "../../../description";
 import {isSemanticsTyped} from "../../../meta-model";
 
 import * as React from "react";

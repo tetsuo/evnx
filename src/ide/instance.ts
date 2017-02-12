@@ -1,4 +1,4 @@
-const semantics = require("../semantics");
+const description = require("../description");
 import { MetaModel } from "../meta-model";
 
-export default new MetaModel(semantics);
+export default new MetaModel(description);
