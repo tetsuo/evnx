@@ -6,7 +6,7 @@ import {IAccessor} from "./utils/accessor";
 
 
 export interface IEditableString {
-	isBeingEdited: boolean;
+	isBeingEdited: boolean|undefined;
 	accessor: IAccessor<string>;
 }
 
