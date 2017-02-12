@@ -25,13 +25,19 @@ For more information on a <cmd>, type:
 `
 
 export const init = tag
-`Joined #${"channel"}.
+`Created #${"channel"}
 
-Read-only access:
+Copy & share one of the following commands with your friends to invite them in:
+
+For read-only access:
 
   /keychain add ${"public"}
 
-Write access:
+For write access:
 
   /keychain add ${"public"} ${"private"}
+
+For more information on keychain and public & private keys, type:
+
+  /help keychain
 `
