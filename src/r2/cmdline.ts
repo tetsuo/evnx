@@ -116,7 +116,7 @@ export class CommandLine {
         const {state} = this.opts
 
         if (cmd === "join" || cmd === "j") { // join
-            this.handleJoin("not implemented")
+            this.handleJoin(argv[0])
         } else if (cmd === "part" || cmd === "p") { // part
             this.handlePart("not implemented")
         } else if (cmd === "nick" || cmd === "n") { // nick

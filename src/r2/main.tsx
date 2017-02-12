@@ -7,7 +7,7 @@ import level = require("levelup")
 const leveljs = require("level-js")
 const sub = require("subleveldown")
 const shasum = require("shasum")
-import {State} from "./state"
+import {State, IConnectionStatus} from "./state"
 import {Router} from "./router"
 import {DB, KEYCHAIN} from "./util"
 import util = require("./util")
@@ -36,24 +36,31 @@ class Main extends React.Component<IMainProps, void> {
 
         if (!channel) {
             state.currentChannel = util.statusKeyPair
-            // this.printHelpOnce()
         } else {
             keychain.get(channel, (er, keypair?) => {
                 if (er) {
                     debug("keypair error: #%s (%s)", channel, er.message)
 
                     state.currentChannel = util.statusKeyPair
-
-                    // this.printHelpOnce()
-                    // this.printLine("Key not found (#%s)", channel)
+                    state.info(util.STATUS, "Key not found (%s)", channel)
 
                     return
+                }
+
+                let printJoined = true
+
+                if (state.connectionStatus[channel] === IConnectionStatus.Connected)  {
+                    printJoined = false
                 }
 
                 state.currentChannel = {
                     id: channel,
                     public: keypair.public,
                     private: keypair.private
+                }
+
+                if (printJoined) {
+                    state.info([util.STATUS, state.currentChannelId], "Joined #%s", state.currentChannelId)
                 }
 
                 swarm.join(keypair)
