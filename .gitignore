@@ -6,6 +6,3 @@ public/bundle.js
 # Visual Studio Code:
 .vscode/
 
-# yarn:
-yarn.lock
-
