@@ -1,5 +1,8 @@
 # Evan: EValuation of Abstract Nodes
 
+[![Build Status](https://travis-ci.org/evanup/evan.svg?branch=master)](http://travis-ci.org/evanup/evan)
+[![NPM version](https://badge.fury.io/js/evanup.svg)](http://badge.fury.io/js/evanup)
+
 A vaguely Lispy language in the context of JavaScript.
 
 The Evan language is implemented by means of an *evaluator*, which transforms *any* JSON into a JavaScript value. Often, this is again JSON but it can also be React DOM elements which are then rendered into a browser.
