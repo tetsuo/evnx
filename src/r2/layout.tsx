@@ -2,13 +2,13 @@ const ReactFlexLayout = require("react-flex-layout")
 const FlexLayout = ReactFlexLayout.Layout
 const FlexLayoutSplitter = ReactFlexLayout.LayoutSplitter
 import * as React from "react"
-import {inject, observer} from "mobx-react"
+import {inject, observer, Provider} from "mobx-react"
 import {Sidebar} from "./sidebar"
 import {Console} from "./console"
 import {Bottombar} from "./bottombar"
-import {Modeler} from "./modeler"
 import {STATUS, NONE} from "./util"
 import {State} from "./state"
+import {EditorView} from "../editor/view"
 
 const styles = require("./layout.scss")
 
@@ -32,11 +32,13 @@ export class Layout extends React.Component<ILayoutProps, void> {
             onTabSelect
         } = this.props
 
-        const {currentChannelId} = state
+        const {currentChannelId, editorStates} = state
 
         if (currentChannelId === NONE) {
             return null
         }
+
+        const editorState = editorStates[currentChannelId]
 
         return (
             <FlexLayout fill="window">
@@ -56,7 +58,11 @@ export class Layout extends React.Component<ILayoutProps, void> {
 
                         : <FlexLayout containerHeight={window.innerHeight}>
                             <FlexLayout layoutHeight="flex">
-                                <Modeler />
+                                <Provider key={currentChannelId} editorState={editorState}>
+                                    <div className={styles.modeler}>
+                                        <EditorView />
+                                    </div>
+                                </Provider>
                             </FlexLayout>
                             <FlexLayoutSplitter />
                             <FlexLayout layoutHeight={360}>
