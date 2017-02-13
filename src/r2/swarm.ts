@@ -91,6 +91,11 @@ export class Swarm<T> extends events.EventEmitter {
         onDisconnectListeners[channel] = ondisconnect
         swarm.on("disconnect", ondisconnect)
 
+        swarm.on("error", (er: any) => {
+            console.error("swarm err: %s", er.message)
+            console.error(er)
+        })
+
         debug("joined channel: %s user: %s", channel, user)
 
         const buf = [] as any
@@ -117,6 +122,14 @@ export class Swarm<T> extends events.EventEmitter {
                         debug("log channel: %s %O", channel, data)
                         this.emit("change", channel, [data.value])
                     })
+                    .on("error", (er: any) => {
+                        console.error("error: %s", er.message)
+                        console.error(er)
+                    })
+            })
+            .on("error", (er: any) => {
+                console.error("error: %s", er.message)
+                console.error(er)
             })
 
         return log
