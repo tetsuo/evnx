@@ -21,7 +21,7 @@ export class Modeler extends React.Component<IModelerProps, void> {
 
         const editorState = editorStates[currentChannelId]
 
-        return <Provider editorState={editorState}>
+        return <Provider key={currentChannelId} editorState={editorState}>
             <div className={styles.modeler}>
                 <EditorView />
             </div>
