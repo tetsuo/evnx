@@ -111,7 +111,7 @@
         {
           "includePaths": [
             "src/r2/",
-            "src/ide/editor/",
+            "src/editor/",
             "src/ide/",
             "src/"
           ]
