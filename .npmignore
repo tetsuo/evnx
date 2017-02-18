@@ -9,4 +9,4 @@ tsconfig.json
 lib/r2/
 lib/ide/
 lib/test/
-docs/
+.wercker/

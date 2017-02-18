@@ -1,0 +1,20 @@
+box: tetsuo/electron-ready
+
+build:
+  steps:
+    - script:
+        name: setup yarn cache
+        code: |
+            export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
+    - script:
+        name: install dependencies
+        code: |
+            HOME=$YARN_CACHE NODE_ENV=development yarn
+    - script:
+        name: test
+        code: |
+            npm run test-default-reporter
+    - script:
+        name: test-karma
+        code: |
+            npm run karma
