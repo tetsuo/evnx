@@ -13,7 +13,7 @@
   "typings": "lib/index",
   "scripts": {
     "test": "npm run build && tape lib/test/*.js lib/**/test/*.js | tap-diff",
-    "test-default-reporter": "npm run build && tape lib/test/*.js lib/**/test/*.js",
+    "test-ci": "npm run build && tape lib/test/*.js lib/**/test/*.js",
     "test-watch": "npm run build && npm run watch & tape-watch lib/test/*.js lib/**/test/*.js -p tap-diff",
     "karma": "karma start --log-level info",
     "karma-watch": "WATCH=true karma start --log-level error",

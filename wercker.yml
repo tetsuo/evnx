@@ -13,7 +13,7 @@ build:
     - script:
         name: test
         code: |
-            npm run test-default-reporter
+            npm run test-ci
     - script:
         name: test-karma
         code: |
