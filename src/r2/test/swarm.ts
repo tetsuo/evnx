@@ -8,6 +8,10 @@ const shasum = require("shasum")
 
 const keypair = JSON.parse(fs.readFileSync(__dirname + "/../../../fixtures/keys.json", "utf8"))
 
+const hubs = [ "https://signalhub.mafintosh.com" ]
+// XXX: do not set this to sdf.party: evanup.io & sdf.party are both hosted on 
+// the same container. If tests fail then sdf.party will never be deployed and vice-versa (and tests will fail), deep Hofstadter stuff
+
 test("swarmlog", t => {
     const wrtc = electronRTC()
 
@@ -17,14 +21,16 @@ test("swarmlog", t => {
         db: memdb(),
         user: "fff",
         wrtc: wrtc,
-        sodium: sodium
+        sodium: sodium,
+		hubs: hubs
     })
 
     const follower = new Swarm<Type>({
         db: memdb(),
         user: "bar",
         wrtc: wrtc,
-        sodium: sodium
+        sodium: sodium,
+		hubs: hubs
     })
 
     const expected = [
@@ -55,6 +61,9 @@ test("swarmlog", t => {
                         wrtc.close()
                     })
                 }
+            })
+            .on("error", (er: any) => {
+                t.fail(er)
             })
     }, 300)
 })

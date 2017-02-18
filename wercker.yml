@@ -1,20 +1,100 @@
-box: tetsuo/electron-ready:4
+box:
+    id: tetsuo/electron-ready:4
+    ports:
+        - "8070"
 
-build:
+dev:
   steps:
     - script:
         name: setup yarn cache
         code: |
             export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
+            export NODE_ENV=development
     - script:
         name: install dependencies
         code: |
-            HOME=$YARN_CACHE NODE_ENV=development yarn
+            HOME=$YARN_CACHE yarn
+    - internal/watch:
+        code: npm run r2
+        reload: false
+
+tests:
+  steps:
     - script:
-        name: test
+        name: setup yarn cache
         code: |
-            npm run test-ci
+            export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
+            export NODE_ENV=development
     - script:
-        name: test-karma
+        name: install dependencies
+        code: |
+            HOME=$YARN_CACHE yarn
+    - script:
+        name: build evan
+        code: |
+            npm run build
+    - script:
+        name: build r2
+        code: |
+            npm run build-r2
+    - script:
+        name: run nodejs tests
+        code: |
+            npm run test
+    - script:
+        name: run browser tests
         code: |
             npm run karma
+
+release-build:
+  steps:
+    - script:
+        name: filter output
+        code: |
+            mv public/* $WERCKER_OUTPUT_DIR
+            mv scripts/generate-task-definition.sh $WERCKER_OUTPUT_DIR
+            mv scripts/generate-nginx-conf.sh $WERCKER_OUTPUT_DIR
+
+push-ecr:
+    box:
+        id: tetsuo/signalhub
+        cmd: /bin/sh
+    steps:
+     - script:
+         name: configure nginx
+         code: |
+             mv $WERCKER_SOURCE_DIR/generate-nginx-conf.sh /etc/nginx/
+             rm -f /etc/nginx/nginx.conf
+             cd /etc/nginx && ./generate-nginx-conf.sh
+     - script:
+         name: mv static files
+         code: |
+             rm -fr /usr/share/nginx/html/*
+             cp -Rp $WERCKER_SOURCE_DIR/* /usr/share/nginx/html
+     - internal/docker-push:
+         disable-sync: true
+         aws-access-key: $AWS_ACCESS_KEY_ID
+         aws-secret-key: $AWS_SECRET_ACCESS_KEY
+         aws-region: eu-central-1
+         aws-registry-id: $AWS_REGISTRY_ID
+         repository: evanup
+         tag: $WERCKER_GIT_BRANCH
+         cmd: |
+             /entrypoint.sh
+
+deploy-ecs:
+    box: python:2.7-slim
+    steps:
+     - script:
+         name: generate task definition
+         code: |
+             ./generate-task-definition.sh
+             rm -f generate-task-definition.sh
+     - 1science/aws-ecs:
+         key: $AWS_ACCESS_KEY_ID
+         secret: $AWS_SECRET_ACCESS_KEY
+         region: eu-central-1
+         cluster-name: evan
+         service-name: evanup-service
+         task-definition-name: evanup
+         task-definition-file: $WERCKER_SOURCE_DIR/evanup-task-definition.json

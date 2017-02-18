@@ -1,6 +1,7 @@
 src/
 node_modules/
 tmp/
+public/
 fixtures/
 .vscode/
 karma.conf.js
@@ -10,3 +11,9 @@ lib/r2/
 lib/ide/
 lib/test/
 .wercker/
+evanup-task-definition.json
+evanup.io.crt
+evanup.io.key
+sdf.party.crt
+sdf.party.key
+nginx.conf
