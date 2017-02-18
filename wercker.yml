@@ -1,4 +1,4 @@
-box: tetsuo/electron-ready
+box: tetsuo/electron-ready:4
 
 build:
   steps:
