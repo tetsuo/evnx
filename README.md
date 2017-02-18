@@ -1,6 +1,8 @@
+## README/docs are outdated
+
 # Evan: EValuation of Abstract Nodes
 
-[![Build Status](https://travis-ci.org/evanup/evan.svg?branch=master)](http://travis-ci.org/evanup/evan)
+[![build status](https://app.wercker.com/status/c007ef99033cffce90bc5fe5efae10d1/s/master "build status")](https://app.wercker.com/project/byKey/c007ef99033cffce90bc5fe5efae10d1)
 [![NPM version](https://badge.fury.io/js/evanup.svg)](http://badge.fury.io/js/evanup)
 
 A vaguely Lispy language in the context of JavaScript.
