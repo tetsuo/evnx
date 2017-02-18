@@ -1,6 +1,5 @@
 module.exports = function(config) {
 	const files = "src/**/test/browser/*.ts*";
-
 	config.set({
 		basePath: "",
 		frameworks: [ "browserify", "tap" ],
@@ -35,14 +34,12 @@ module.exports = function(config) {
 		colors: true,
 		logLevel: config.LOG_DEBUG,
 		autoWatch: process.env.WATCH === "true",
+		browsers: [ "jsdom" ],
+		singleRun: !(process.env.WATCH === "true"),
 		browserConsoleLogOptions: {
 			level: "error",
 			format: "%b %T: %m",
 			terminal: false
-		},
-		browsers: process.env.CI === "true"
-			? [ "Chrome" ]
-			: [ "jsdom" ],
-		singleRun: !(process.env.WATCH === "true")
+		}
 	});
 }
