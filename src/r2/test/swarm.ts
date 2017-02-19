@@ -22,7 +22,7 @@ test("swarmlog", t => {
         user: "fff",
         wrtc: wrtc,
         sodium: sodium,
-		hubs: hubs
+        hubs: hubs
     })
 
     const follower = new Swarm<Type>({
@@ -30,7 +30,7 @@ test("swarmlog", t => {
         user: "bar",
         wrtc: wrtc,
         sodium: sodium,
-		hubs: hubs
+        hubs: hubs
     })
 
     const expected = [
