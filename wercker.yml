@@ -89,7 +89,6 @@ deploy-ecs:
          name: generate task definition
          code: |
              ./generate-task-definition.sh
-             rm -f generate-task-definition.sh
      - 1science/aws-ecs:
          key: $AWS_ACCESS_KEY_ID
          secret: $AWS_SECRET_ACCESS_KEY
