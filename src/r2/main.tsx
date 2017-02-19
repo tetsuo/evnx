@@ -170,8 +170,6 @@ if (process.env.NODE_ENV !== "production") {
     window["state"] = state
 }
 
-//ReactDOM.render(<Main {...{ router, db, keychain, state, swarm: state.swarm, kb }} />, document.getElementById("main"))
-
 class UpdateWrapper extends React.Component<void, void> {
     componentWillMount() {
         this.forceUpdate() // a little hack to help us rerender when this module is reloaded
