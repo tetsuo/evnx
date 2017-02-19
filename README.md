@@ -1,8 +1,9 @@
+# Evan: EValuation of Abstract Nodes
+
 ## WIP
 
 ## README/docs are outdated
 
-# Evan: EValuation of Abstract Nodes
 
 [![build status](https://app.wercker.com/status/c007ef99033cffce90bc5fe5efae10d1/s/master "build status")](https://app.wercker.com/project/byKey/c007ef99033cffce90bc5fe5efae10d1)
 [![NPM version](https://badge.fury.io/js/evanup.svg)](http://badge.fury.io/js/evanup)
