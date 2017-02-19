@@ -170,5 +170,21 @@ if (process.env.NODE_ENV !== "production") {
     window["state"] = state
 }
 
-ReactDOM.render(<Main {...{ router, db, keychain, state, swarm: state.swarm, kb }} />,
-    document.getElementById("main"))
+//ReactDOM.render(<Main {...{ router, db, keychain, state, swarm: state.swarm, kb }} />, document.getElementById("main"))
+
+class UpdateWrapper extends React.Component<void, void> {
+    componentWillMount() {
+        this.forceUpdate() // a little hack to help us rerender when this module is reloaded
+    }
+
+    render() {
+        return <Main {...{ router, db, keychain, state, swarm: state.swarm, kb }} />
+    }
+}
+
+const ud = require("ud")
+
+ReactDOM.render(
+    React.createElement(ud.defn(module, UpdateWrapper)),
+    document.getElementById("main")
+)
