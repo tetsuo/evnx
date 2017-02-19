@@ -6,6 +6,11 @@ import {extendObservable as xtend} from "mobx"
 import util = require("./util")
 import {ILog, IKeyPair, Swarm} from "./swarm"
 import {EditorState} from "../editor/state"
+import fs = require("fs")
+
+const fib = JSON.parse(fs.readFileSync(__dirname + "/../../fixtures/programs/fib.json", "utf8"))
+
+console.log(fib)
 
 export class State {
     currentChannel: IIndexedKeyPair
@@ -160,7 +165,9 @@ export class State {
                 }
 
                 if (!editorStates.hasOwnProperty(channel)) {
+                    // editorStates[channel] = new EditorState
                     editorStates[channel] = new EditorState
+                    editorStates[channel].setResource("", fib)
                 }
 
                 if (channel !== util.STATUS) {
