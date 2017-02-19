@@ -20,7 +20,6 @@
 		"src/index.ts",
 		"src/cmd.ts",
 		"src/test/*.ts",
-		"src/ide/main.tsx",
 		"src/r2/main.tsx",
 		"src/r2/test/*.ts"
 	]
