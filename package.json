@@ -20,13 +20,10 @@
     "clean": "rm -fr lib && rm -f public/bundle.js",
     "build": "npm run clean && tsc",
     "watch": "npm run clean && tsc --watch",
-    "build-ide": "NODE_ENV=production browserify -p tsify -r ud/noop:ud src/ide/main.tsx | uglifyjs -c > public/bundle.js",
-    "watch-ide-hmr": "watchify src/ide/main.tsx -p browserify-hmr -p [ tsify --sourceMap ] -o public/bundle.js -dv",
-    "ide-hmr": "npm run clean && ecstatic -p 8070 public & npm run watch-ide-hmr",
-    "watch-ide": "watchify src/ide/main.tsx -p [ tsify --sourceMap ] -r ud/noop:ud -o public/bundle.js -dv",
-    "ide": "npm run clean && ecstatic -p 8070 public & npm run watch-ide",
-    "build-r2": "NODE_ENV=production browserify -p tsify -r chloride/browser:chloride src/r2/main.tsx | bundle-collapser | uglifyjs -cm > public/bundle.js",
-    "watch-r2": "watchify src/r2/main.tsx -p [ tsify --sourceMap ] -r chloride/browser:chloride -o public/bundle.js -dv",
+    "watch-r2-hmr": "watchify src/r2/main.tsx -p [ tsify --sourceMap ] -p browserify-hmr -r chloride/browser:chloride -o public/bundle.js -dv",
+    "watch-r2": "watchify src/r2/main.tsx -p [ tsify --sourceMap ] -r ud/noop:ud -r chloride/browser:chloride -o public/bundle.js -dv",
+    "build-r2": "NODE_ENV=production browserify -p tsify -r ud/noop:ud -r chloride/browser:chloride src/r2/main.tsx | bundle-collapser | uglifyjs -cm > public/bundle.js",
+    "r2-hmr": "npm run clean && ecstatic -p 8070 public & npm run watch-r2-hmr",
     "r2": "npm run clean && ecstatic -p 8070 public & npm run watch-r2"
   },
   "contributors": [
@@ -110,7 +107,6 @@
           "includePaths": [
             "src/r2/",
             "src/editor/",
-            "src/ide/",
             "src/"
           ]
         }

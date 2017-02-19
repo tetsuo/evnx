@@ -3,7 +3,7 @@ import {inject, observer, Provider} from "mobx-react"
 import {Tab, Tabs, TabList, TabPanel} from "react-tabs"
 import {Console, IConsoleProps} from "./console"
 import {State} from "./state"
-import {EvaluationView} from "../ide/evaluation-view"
+import {EvaluationView} from "../editor/evaluation-view"
 
 const styles = require("./bottombar.scss")
 
