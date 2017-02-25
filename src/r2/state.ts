@@ -4,7 +4,7 @@ const cl = require("chloride")
 import m = require("mobx")
 import {extendObservable as xtend} from "mobx"
 import util = require("./util")
-import {ILog, IKeyPair, Swarm} from "./swarm"
+import {ILog, IKeyPair, Swarm} from "../net/swarm"
 import {EditorState} from "../editor/state"
 import fs = require("fs")
 

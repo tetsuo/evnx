@@ -1,6 +1,6 @@
 const debug = require("debug")("evan:r2:keychain")
 const shasum = require("shasum")
-import {IKeyPair, normkey} from "./swarm"
+import {IKeyPair, normkey} from "../net/swarm"
 import {IIndexedKeyPair} from "./state"
 
 export class Keychain {
