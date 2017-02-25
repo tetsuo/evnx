@@ -5,7 +5,7 @@ import {STATUS} from "./util"
 import {State, ILogData, ILogDataKind, IIndexedKeyPair} from "./state"
 import {Keychain} from "./keychain"
 import {Router} from "./router"
-import {Swarm, IKeyPair} from "./swarm"
+import {Swarm, IKeyPair} from "../net/swarm"
 import help = require("./help")
 
 export type ICommandLineOptions = {

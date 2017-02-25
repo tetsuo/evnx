@@ -14,7 +14,7 @@ import util = require("./util")
 import {Keychain} from "./keychain"
 import {CommandLine, ICommandLineOptions} from "./cmdline"
 import {Layout} from "./layout"
-import {normkey} from "./swarm"
+import {normkey} from "../net/swarm"
 import {Keyboard} from "./keyboard"
 
 type IMainProps = ICommandLineOptions & { kb: Keyboard }

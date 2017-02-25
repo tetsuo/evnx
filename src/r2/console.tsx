@@ -7,7 +7,7 @@ import {computed} from "mobx"
 import strftime = require("strftime")
 import {State, ILogDataKind, ILogData} from "./state"
 import {STATUS} from "./util"
-import {ILog} from "./swarm"
+import {ILog} from "../net/swarm"
 
 const styles = require("./console.scss")
 
