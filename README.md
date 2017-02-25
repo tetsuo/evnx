@@ -51,7 +51,7 @@ But, of course, *writing* a program in JSON is tedious, uncomfortable and unprod
 
 # evanup.io
 
-Enter [evanup.io!](https://evanup.io), internally known as [`r2`](./src/r2), evanup is a peer to peer, decentralized webrtc client / projectional editor for building evan programs with friends in real-time.
+Enter [evanup.io!](https://evanup.io), evanup is a peer to peer, decentralized webrtc client / projectional editor for building evan programs with friends in real-time.
 
 It's built on top of [many](https://github.com/mobxjs/mobx) [amazing](https://github.com/mafintosh/hyperlog) [technologies](https://github.com/Starcounter-Jack/JSON-Patch), which one of them happens to be _Evan_ evaluator itself.
 
