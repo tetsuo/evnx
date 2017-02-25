@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:keyboard")
+const debug = require("debug")("evan:ide:keyboard")
 import events = require("events")
 
 export type IKeyboardEventType = "pgup" | "pgdown" | "down" | "up"

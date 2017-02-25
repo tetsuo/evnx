@@ -4,5 +4,5 @@ set -ex
 
 npm run test
 npm run build
-npm run build-r2
+npm run build-ide
 npm publish

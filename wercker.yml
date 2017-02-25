@@ -15,7 +15,7 @@ dev:
         code: |
             HOME=$YARN_CACHE yarn
     - internal/watch:
-        code: npm run r2
+        code: npm run ide
         reload: false
 
 tests:
@@ -34,9 +34,9 @@ tests:
         code: |
             npm run build
     - script:
-        name: build r2
+        name: build ide
         code: |
-            npm run build-r2
+            npm run build-ide
     - script:
         name: run nodejs tests
         code: |

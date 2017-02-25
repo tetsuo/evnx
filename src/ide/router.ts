@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:router")
+const debug = require("debug")("evan:ide:router")
 import events = require("events")
 import util = require("./util")
 

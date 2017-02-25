@@ -1,7 +1,7 @@
 export const STATUS = "!status"
 export const INFO = "!info"
 const VERSION = "2"
-export const DB = "r2." + VERSION
+export const DB = "ide." + VERSION
 export const KEYCHAIN = "!!ident"
 export const NONE = "none"
 

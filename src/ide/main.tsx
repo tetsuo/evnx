@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:main")
+const debug = require("debug")("evan:ide:main")
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import {Provider, observer} from "mobx-react"
@@ -11,7 +11,7 @@ import {State, IConnectionStatus} from "./state"
 import {Router} from "./router"
 import {DB, KEYCHAIN} from "./util"
 import util = require("./util")
-import {Keychain} from "./keychain"
+import {Keychain} from "../storage/keychain"
 import {CommandLine, ICommandLineOptions} from "./cmdline"
 import {Layout} from "./layout"
 import {normkey} from "../net/swarm"
