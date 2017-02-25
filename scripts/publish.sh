@@ -1,8 +1,10 @@
 #!/bin/bash
 
-set -ex
-
-npm run test
+npm run clean
 npm run build
-npm run build-ide
-npm publish
+npm run test
+
+npm run clean
+npm run build
+
+npm run publish
