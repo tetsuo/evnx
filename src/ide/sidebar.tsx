@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:sidebar")
+const debug = require("debug")("evan:ide:sidebar")
 import * as React from "react"
 import {inject, observer} from "mobx-react"
 import {IConnectionStatus, IActivity, State} from "./state"

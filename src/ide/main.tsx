@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:main")
+const debug = require("debug")("evan:ide:main")
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import {Provider, observer} from "mobx-react"

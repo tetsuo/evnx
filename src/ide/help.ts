@@ -1,8 +1,8 @@
 import {tag} from "../template"
 
-export const main = `welcome to evan-r2!
+export const main = `welcome to evan-ide!
 
-evan-r2 is a peer to peer, decentralized webrtc client for building evan programs with friends in real-time.
+evan-ide is a peer to peer, decentralized webrtc client for building evan programs with friends in real-time.
 
 Commands work like IRC:
 

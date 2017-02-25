@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:state")
+const debug = require("debug")("evan:ide:state")
 const sprintf = require("sprintf")
 const cl = require("chloride")
 import m = require("mobx")

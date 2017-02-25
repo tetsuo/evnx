@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:cmdline")
+const debug = require("debug")("evan:ide:cmdline")
 import {transaction} from "mobx"
 import util = require("./util")
 import {STATUS} from "./util"
