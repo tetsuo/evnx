@@ -1,7 +1,8 @@
 const debug = require("debug")("evan:r2:keychain")
 const shasum = require("shasum")
 import {IKeyPair, normkey} from "../net/swarm"
-import {IIndexedKeyPair} from "./state"
+
+export type IIndexedKeyPair = IKeyPair & { id: string }
 
 export class Keychain {
     constructor(public db: LevelUp) {}

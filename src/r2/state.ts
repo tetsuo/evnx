@@ -6,6 +6,7 @@ import {extendObservable as xtend} from "mobx"
 import util = require("./util")
 import {ILog, IKeyPair, Swarm} from "../net/swarm"
 import {EditorState} from "../editor/state"
+import {IIndexedKeyPair} from "./keychain"
 import fs = require("fs")
 
 const fib = JSON.parse(fs.readFileSync(__dirname + "/../../fixtures/programs/fib.json", "utf8"))
@@ -217,9 +218,6 @@ export class State {
         })
     }
 }
-
-// keypairs
-export type IIndexedKeyPair = IKeyPair & { id: string }
 
 // logs
 export enum ILogDataKind {

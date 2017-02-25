@@ -2,8 +2,8 @@ const debug = require("debug")("evan:r2:cmdline")
 import {transaction} from "mobx"
 import util = require("./util")
 import {STATUS} from "./util"
-import {State, ILogData, ILogDataKind, IIndexedKeyPair} from "./state"
-import {Keychain} from "./keychain"
+import {State, ILogData, ILogDataKind} from "./state"
+import {Keychain, IIndexedKeyPair} from "./keychain"
 import {Router} from "./router"
 import {Swarm, IKeyPair} from "../net/swarm"
 import help = require("./help")
