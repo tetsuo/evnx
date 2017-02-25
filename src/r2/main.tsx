@@ -11,7 +11,7 @@ import {State, IConnectionStatus} from "./state"
 import {Router} from "./router"
 import {DB, KEYCHAIN} from "./util"
 import util = require("./util")
-import {Keychain} from "./keychain"
+import {Keychain} from "../storage/keychain"
 import {CommandLine, ICommandLineOptions} from "./cmdline"
 import {Layout} from "./layout"
 import {normkey} from "../net/swarm"

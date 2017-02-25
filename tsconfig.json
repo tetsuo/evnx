@@ -21,6 +21,7 @@
 		"src/cmd.ts",
 		"src/test/*.ts",
 		"src/r2/main.tsx",
-		"src/net/**/*.ts"
+		"src/net/**/*.ts",
+		"src/storage/**/*.ts"
 	]
 }

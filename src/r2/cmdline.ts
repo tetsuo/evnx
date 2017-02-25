@@ -3,7 +3,7 @@ import {transaction} from "mobx"
 import util = require("./util")
 import {STATUS} from "./util"
 import {State, ILogData, ILogDataKind} from "./state"
-import {Keychain, IIndexedKeyPair} from "./keychain"
+import {Keychain, IIndexedKeyPair} from "../storage/keychain"
 import {Router} from "./router"
 import {Swarm, IKeyPair} from "../net/swarm"
 import help = require("./help")

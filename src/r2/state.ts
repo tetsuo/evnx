@@ -6,7 +6,7 @@ import {extendObservable as xtend} from "mobx"
 import util = require("./util")
 import {ILog, IKeyPair, Swarm} from "../net/swarm"
 import {EditorState} from "../editor/state"
-import {IIndexedKeyPair} from "./keychain"
+import {IIndexedKeyPair} from "../storage/keychain"
 import fs = require("fs")
 
 const fib = JSON.parse(fs.readFileSync(__dirname + "/../../fixtures/programs/fib.json", "utf8"))
