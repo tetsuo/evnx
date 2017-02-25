@@ -93,7 +93,7 @@
     "tape-watch": "^2.2.4",
     "tsify": "^3.0.0",
     "tslint": "^4.4.2",
-    "typescript": "^2.1.4",
+    "typescript": "^2.2.1",
     "ud": "^3.1.0",
     "uglify-js": "mishoo/UglifyJS2#harmony",
     "watchify": "^3.8.0",
