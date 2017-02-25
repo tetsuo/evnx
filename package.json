@@ -9,12 +9,12 @@
   "bin": {
     "evan": "cmd.js"
   },
-  "main": "lib/index.js",
-  "typings": "lib/index",
+  "main": "lib/lang/index.js",
+  "typings": "lib/lang/index",
   "scripts": {
-    "test-diff": "tape lib/test/*.js lib/**/test/*.js | tap-diff",
-    "test": "tape lib/test/*.js lib/**/test/*.js",
-    "test-watch": "npm run watch & tape-watch lib/test/*.js lib/**/test/*.js -p tap-diff",
+    "test-diff": "tape lib/**/test/*.js | tap-diff",
+    "test": "tape lib/**/test/*.js",
+    "test-watch": "npm run watch & tape-watch lib/**/test/*.js -p tap-diff",
     "karma": "karma start --log-level info",
     "karma-watch": "WATCH=true karma start --log-level error",
     "clean": "rm -fr lib && rm -f public/bundle.js",
@@ -106,8 +106,7 @@
         {
           "includePaths": [
             "src/ide/",
-            "src/editor/",
-            "src/"
+            "src/editor/"
           ]
         }
       ],

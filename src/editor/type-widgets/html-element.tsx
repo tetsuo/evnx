@@ -3,7 +3,7 @@ import * as React from "react";
 
 import {BaseEditWidget} from "../base-edit-widget";
 import {dispatch} from "../dispatcher";
-import {IHtmlElement} from "../../description";
+import {IHtmlElement} from "../../lang/description";
 
 
 @inject("editorState") @observer

@@ -1,4 +1,4 @@
-import {util} from "../../util";
+import {util} from "../../lang/util";
 
 
 export type nothing = null | undefined;

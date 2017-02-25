@@ -1,7 +1,7 @@
 import {inject, observer} from "mobx-react";
 import * as React from "react";
 
-import {evaluate} from "../evan";
+import {evaluate} from "../lang/evan";
 import {EditorState} from "../editor/state";
 import {prettyJson} from "../editor/utils/object-util";
 import {browser} from "./external-objects/browser";

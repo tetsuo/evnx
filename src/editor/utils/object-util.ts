@@ -1,10 +1,8 @@
-import {util} from "../../util";
-import {IObservableArray, isArrayLike} from "mobx";
-
-import {ISemanticsTyped} from "../../description";
-import {isSemanticsTyped} from "../../meta-model";
-
 import * as React from "react";
+import {IObservableArray, isArrayLike} from "mobx";
+import {util} from "../../lang/util";
+import {ISemanticsTyped} from "../../lang/description";
+import {isSemanticsTyped} from "../../lang/meta-model";
 
 export type ArrayLike<T> = Array<T> | IObservableArray<T>;
 

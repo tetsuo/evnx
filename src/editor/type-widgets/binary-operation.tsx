@@ -4,7 +4,7 @@ import * as React from "react";
 import {BaseEditWidget} from "../base-edit-widget";
 import {makePropertyAccessor} from "../utils/accessor";
 import {dispatch} from "../dispatcher";
-import {IBinaryOperation} from "../../description";
+import {IBinaryOperation} from "../../lang/description";
 
 
 @inject("editorState") @observer

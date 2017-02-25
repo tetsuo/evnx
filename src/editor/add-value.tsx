@@ -26,7 +26,7 @@ export class AddValue extends React.Component<IAddValueProps, { creating: boolea
 			<option value="json-array" key="json-array">array: []</option>,
 			<option value="json-object" key="json-object">object: {"{}"}</option>,
 			<option value="json-simple-value" key="json-simple-value">simple value: ...</option>
-		].concat(sTypes.map(sType => <option value={sType} key={sType}>{sType}</option>));
+		].concat(sTypes.map((sType: any) => <option value={sType} key={sType}>{sType}</option>));
 		if (!this.state.creating) {
 			return (
 				<div className={styles.widget}>
