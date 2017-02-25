@@ -1,5 +1,5 @@
-const description = require("../description");
-import { MetaModel } from "../meta-model";
+const description = require("../../description");
+import { MetaModel } from "../lang/meta-model";
 
 // TODO: do not use singletons
 

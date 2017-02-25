@@ -1,4 +1,4 @@
-import {tag} from "../template"
+import {tag} from "../lang/template"
 
 export const main = `welcome to evan-ide!
 

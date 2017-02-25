@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require("./lib/cmd.js");
+require("./lib/lang/cmd.js");

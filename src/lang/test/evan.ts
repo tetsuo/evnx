@@ -3,7 +3,7 @@ import * as path from "path";
 import * as evan from "../evan";
 const glob = require("glob");
 
-const programsDir = __dirname + "/../../fixtures/programs";
+const programsDir = __dirname + "/../../../fixtures/programs";
 
 test("evaluate programs", t => {
 

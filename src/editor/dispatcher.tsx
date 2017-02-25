@@ -1,4 +1,4 @@
-import {util} from "../util";
+import {util} from "../lang/util";
 import * as React from "react";
 
 import {JsonArray} from "./json-widgets/json-array";
@@ -7,7 +7,7 @@ import {JsonSimpleValue} from "./json-widgets/json-simple-value";
 import {IAccessor} from "./utils/accessor";
 import {polyDispatch} from "./polymorphic-dispatcher";
 import {prettyJson} from "./utils/object-util";
-import {isSemanticsTyped, sType} from "../meta-model";
+import {isSemanticsTyped, sType} from "../lang/meta-model";
 
 const styles = require("./styles.scss");
 

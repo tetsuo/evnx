@@ -7,9 +7,12 @@ fixtures/
 karma.conf.js
 tslint.json
 tsconfig.json
-lib/r2/
 lib/ide/
 lib/test/
+lib/storage/
+lib/editor/
+lib/net/
+lib/*/test/
 .wercker/
 evanup-task-definition.json
 evanup.io.crt
@@ -17,3 +20,6 @@ evanup.io.key
 sdf.party.crt
 sdf.party.key
 nginx.conf
+scripts
+wercker.yml
+.dockerignore

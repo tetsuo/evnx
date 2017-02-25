@@ -17,11 +17,11 @@
 		"strictNullChecks": true
 	},
 	"include": [
-		"src/index.ts",
-		"src/cmd.ts",
-		"src/test/*.ts",
-		"src/ide/main.tsx",
-		"src/net/**/*.ts",
-		"src/storage/**/*.ts"
+		"src/**/test/*.ts",
+		"src/lang/index.ts",
+		"src/lang/cmd.ts",
+		"src/net/*.ts",
+		"src/storage/*.ts",
+		"src/ide/main.tsx"
 	]
 }
