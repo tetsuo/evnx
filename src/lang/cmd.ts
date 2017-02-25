@@ -17,12 +17,12 @@ const file: string = argv._[0];
 if ((!file && !argv.semantics && !argv.version) || argv.help) {
 	showUsage();
 } else if (argv.semantics) {
-	const data = require("../description.json");
+	const data = require("../../description.json");
 	const node = new SemanticsNode(data);
 	console.log(node.print());
 	process.exit(0);
 } else if (argv.version) {
-	console.log("v" + require("../package.json").version);
+	console.log("v" + require("../../package.json").version);
 	process.exit(0);
 } else {
 	const prog = require(path.resolve(file));
