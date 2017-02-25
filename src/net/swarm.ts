@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:swarm")
+const debug = require("debug")("evan:net:swarm")
 import * as events from "events"
 const hyperlog = require("hyperlog")
 const sub = require("subleveldown")

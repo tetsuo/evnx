@@ -1,4 +1,4 @@
-const debug = require("debug")("evan:r2:keychain")
+const debug = require("debug")("evan:net:keychain")
 const shasum = require("shasum")
 import {IKeyPair, normkey} from "../net/swarm"
 
