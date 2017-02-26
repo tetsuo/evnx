@@ -24,7 +24,6 @@ export class EditorState {
 	setResource(path: string, jsonData: any) {
 		this.pathLoaded = path;
 		this.jsonData = jsonData;
-		location.hash = "#" + path;
 	}
 
 	/**
