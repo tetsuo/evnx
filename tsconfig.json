@@ -10,7 +10,7 @@
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
-		"noImplicitThis": true,
+		"noImplicitThis": false,
 		"noUnusedLocals": true,
 		"noUnusedParameters": false,
 		"suppressImplicitAnyIndexErrors": true,
@@ -21,6 +21,7 @@
 		"src/lang/index.ts",
 		"src/lang/cmd.ts",
 		"src/net/*.ts",
+		"src/structs/*.ts",
 		"src/storage/*.ts",
 		"src/ide/main.tsx"
 	]
