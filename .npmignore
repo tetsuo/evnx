@@ -12,6 +12,7 @@ lib/test/
 lib/storage/
 lib/editor/
 lib/net/
+lib/structs/
 lib/*/test/
 .wercker/
 evanup-task-definition.json
