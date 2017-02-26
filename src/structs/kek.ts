@@ -4,7 +4,7 @@ import through = require("through2")
 const multi = require("multi-write-stream")
 const readonly = require("read-only-stream")
 const eos = require("end-of-stream")
-const debug = require("debug")("kek")
+const debug = require("debug")("evan:structs:kek")
 
 export type IMultiWriteStream = {
     add: (stream: NodeJS.ReadWriteStream) => void
