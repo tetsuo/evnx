@@ -81,19 +81,3 @@ push-ecr:
          tag: $WERCKER_GIT_BRANCH
          cmd: |
              /entrypoint.sh
-
-deploy-ecs:
-    box: python:2.7-slim
-    steps:
-     - script:
-         name: generate task definition
-         code: |
-             ./generate-task-definition.sh
-     - 1science/aws-ecs:
-         key: $AWS_ACCESS_KEY_ID
-         secret: $AWS_SECRET_ACCESS_KEY
-         region: eu-central-1
-         cluster-name: evan
-         service-name: evanup-service
-         task-definition-name: evanup
-         task-definition-file: $WERCKER_SOURCE_DIR/evanup-task-definition.json
