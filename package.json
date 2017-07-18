@@ -35,6 +35,7 @@
     "indent-string": "^3.0.0",
     "is-integer": "^1.0.6",
     "minimist": "^1.2.0",
+    "ecstatic": "^2.1.0",
     "react": "^15.3.2"
   },
   "devDependencies": {
@@ -57,7 +58,6 @@
     "bundle-collapser": "^1.2.1",
     "chloride": "^2.2.4",
     "debug": "^2.6.0",
-    "ecstatic": "^2.1.0",
     "electron-webrtc": "^0.3.0",
     "end-of-stream": "^1.1.0",
     "enzyme": "^2.7.0",
