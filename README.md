@@ -1,6 +1,6 @@
 # evnx
 
-a secure, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
+a secure, collaborative, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
 
 [![NPM version](https://badge.fury.io/js/evnx.svg)](http://badge.fury.io/js/evnx)
 
