@@ -77,7 +77,7 @@ push-ecr:
          aws-secret-key: $AWS_SECRET_ACCESS_KEY
          aws-region: eu-central-1
          aws-registry-id: $AWS_REGISTRY_ID
-         repository: evanup
+         repository: evnx
          tag: $WERCKER_GIT_BRANCH
          cmd: |
              /entrypoint.sh

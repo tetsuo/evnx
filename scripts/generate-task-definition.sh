@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cat > evanup-task-definition.json <<EOF
+cat > evnx-task-definition.json <<EOF
 [
     {
       "volumesFrom": [],
@@ -20,10 +20,10 @@ cat > evanup-task-definition.json <<EOF
       "essential": true,
       "entryPoint": [],
       "mountPoints": [],
-      "name": "evanup",
+      "name": "evnx",
       "environment": [],
       "links": [],
-      "image": "$AWS_REGISTRY_URL/evanup:site-release",
+      "image": "$AWS_REGISTRY_URL/evnx:site-release",
       "command": [],
       "cpu": 1
     }

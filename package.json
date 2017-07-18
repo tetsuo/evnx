@@ -1,13 +1,13 @@
 {
-  "name": "evanup",
-  "version": "0.1.3",
-  "description": "a vaguely lispy language in the context of javascript",
+  "name": "evnx",
+  "version": "0.1.0",
+  "description": "a projectional editor for building evan programs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/evanup/evan.git"
+    "url": "https://github.com/tetsuo/evnx.git"
   },
   "bin": {
-    "evan": "cmd.js"
+    "evnx": "cmd.js"
   },
   "main": "lib/lang/index.js",
   "typings": "lib/lang/index",
