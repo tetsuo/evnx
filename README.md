@@ -1,23 +1,30 @@
-# evan\up [wip]
+# evnx
 
-<todo-description>
+a secure, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
 
-Visit [evanup.io](https://evanup.io) to see it in action.
+[![NPM version](https://badge.fury.io/js/evnx.svg)](http://badge.fury.io/js/evnx)
 
-```
-npm install evanup
-```
+# introduction
 
-[![build status](https://app.wercker.com/status/c007ef99033cffce90bc5fe5efae10d1/s/master "build status")](https://app.wercker.com/project/byKey/c007ef99033cffce90bc5fe5efae10d1)
-[![NPM version](https://badge.fury.io/js/evanup.svg)](http://badge.fury.io/js/evanup)
+`evnx` is currently in development.
 
-<todo-retro-80s-logo>
+Having said that, you can see the final build in action here. Enjoy!
 
-# Evan
+**Documentation is coming soon**
 
-Evan's language constructs (aka *semantics types*, or *sTypes* for short) are structurally described in [description.json](./description.json) file.
+*todo-retro-80s-logo*
 
-As an example, a `binary operation` definition looks like this:
+# evaluation of abstract nodes
+
+The Evan language is implemented by means of an *evaluator*, which transforms JSON to JavaScript, and it is said to be a *Lispy* language in the context of JavaScript. (I'm hoping Meinte will explain this.)
+
+It's in principle *functional* (evaluating the same piece of JSON will always lead to the same result), further, the evaluation is wired to happen *incremental* (using [mobx](https://github.com/mobxjs/mobx)), so the subsequent updates will only require a partial re-evaluation.
+
+## language
+
+Evan's language constructs are structurally described in [description.json](./description.json) file.
+
+As an example, a `binary operation` definition looks like this when JSON is used as concrete syntax:
 
 ```json
 "binary operation": {
@@ -45,26 +52,16 @@ and here is an excerpt from an Evan _program_ that uses this definition:
   }
 ```
 
-For Evan, JSON is chosen as the concrete syntax- because it is a very well-known and supported format, [and it's true.](https://www.youtube.com/watch?v=ELD2AwFN9Nc)
+You can optionally provide an external object table to the evaluator.
 
-But, of course, *writing* a program in JSON is tedious, uncomfortable and unproductive: after all, we'd be writing ASTs in a verbose form.
-
-# evanup.io
-
-Enter [evanup.io!](https://evanup.io), evanup is a peer to peer, decentralized webrtc client / projectional editor for building evan programs with friends in real-time.
-
-It's built on top of [many](https://github.com/mobxjs/mobx) [amazing](https://github.com/mafintosh/hyperlog) [technologies](https://github.com/Starcounter-Jack/JSON-Patch), which one of them happens to be _Evan_ evaluator itself.
-
-# Execution == Evaluation
-
-Evan "works" by providing the *evaluator* with *any* JSON input, and optionally an object table (external-objects).
-
-The evaluator then tree-transforms this JSON according to the following rules:
+The evaluator will then transform those objects according to the following rules:
 
 * Objects which have a string-valued property `$sType` are processed by their respective evaluation function.
   * This evaluation *never* throws but returns something sensible: either an issue object or `undefined` (which corresponds loosely to e.g. Scala's `None`).
   * The individual evaluation functions determine whether recursion into sub-values of sTyped objects happen.
 * All other values (so also objects which are not "sTyped") are returned as-is.
+
+_External Objects_ is Evan's way of interfacing with things outside any Evan program on its own. It's nothing more than a map/dictionary of names to objects, which expose functions. Using the semantics type `object-function invocation`, you can interact with functions on these objects.
 
 ## On type checking
 
@@ -72,20 +69,10 @@ The evaluator then tree-transforms this JSON according to the following rules:
 * A separate type checker (once it exists) mimics the evaluator but computes and checks typing statically: this should help the developer beyond what's reasonable in terms of unit tests.
 * Evan is not statically typed, but could at some point become optionally-typed.
 
-# external Objects
-
-_External Objects_ is Evan's way of interfacing with things outside any Evan program on its own. It's nothing more than a map/dictionary of names to objects, which expose functions. Using the semantics type `object-function invocation`, you can interact with functions on these objects.
-
-# Development
-
-To get started with development, clone this repository and run `npm install` or `yarn`.
-
-<todo>
-
-# Usage
+# CLI usage
 
 ```
-evan FILE OPTIONS
+evnx FILE OPTIONS
 
 Options:
 
@@ -94,6 +81,12 @@ Options:
   -h, --help     Show this message.
 ```
 
-# License
+# development
 
-mit
+Install dependencies and start the development server:
+
+```
+yarn
+npm run test
+npm run ide
+```
