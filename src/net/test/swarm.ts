@@ -8,7 +8,7 @@ const shasum = require("shasum")
 
 const keypair = JSON.parse(fs.readFileSync(__dirname + "/../../../fixtures/keys.json", "utf8"))
 
-const hubs = [ "https://signalhub.mafintosh.com" ]
+const hubs = [ "https://evnx-hub.herokuapp.com" ]
 // XXX: do not set this to sdf.party: evanup.io & sdf.party are both hosted on
 // the same container. If tests fail then sdf.party will never be deployed and vice-versa (and tests will fail), deep Hofstadter stuff
 

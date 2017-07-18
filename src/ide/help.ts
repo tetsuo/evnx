@@ -1,8 +1,8 @@
 import {tag} from "../lang/template"
 
-export const main = `welcome to evan-ide!
+export const main = `welcome to evnx!
 
-evan-ide is a peer to peer, decentralized webrtc client for building evan programs with friends in real-time.
+evnx is a collaborative, secure, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time. More info here: https://github.com/tetsuo/evnx
 
 Commands work like IRC:
 

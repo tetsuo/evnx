@@ -1,6 +1,6 @@
 # evnx
 
-a secure, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
+a secure, collaborative, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
 
 [![NPM version](https://badge.fury.io/js/evnx.svg)](http://badge.fury.io/js/evnx)
 
@@ -63,13 +63,13 @@ The evaluator will then transform those objects according to the following rules
 
 _External Objects_ is Evan's way of interfacing with things outside any Evan program on its own. It's nothing more than a map/dictionary of names to objects, which expose functions. Using the semantics type `object-function invocation`, you can interact with functions on these objects.
 
-## On type checking
+## on type checking
 
 * Evaluation does (some) type checking - which obviously happens at runtime.
 * A separate type checker (once it exists) mimics the evaluator but computes and checks typing statically: this should help the developer beyond what's reasonable in terms of unit tests.
 * Evan is not statically typed, but could at some point become optionally-typed.
 
-# CLI usage
+# cli
 
 ```
 evnx FILE OPTIONS
@@ -90,3 +90,7 @@ yarn
 npm run test
 npm run ide
 ```
+
+# heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
