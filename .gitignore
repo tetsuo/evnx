@@ -4,7 +4,7 @@ tmp/
 public/bundle.js
 .vscode/
 .wercker/
-evanup-task-definition.json
+evnx-task-definition.json
 evanup.io.crt
 evanup.io.key
 sdf.party.crt
