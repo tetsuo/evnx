@@ -28,7 +28,7 @@ export class Swarm<T> extends events.EventEmitter {
         this.db = options.db
 
         if (!options.hubs) {
-            options.hubs = [ "https://sdf.party" ]
+            options.hubs = [ "https://evnx-hub.herokuapp.com" ]
         }
     }
 
