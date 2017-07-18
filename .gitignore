@@ -1,7 +1,6 @@
 lib/
 node_modules/
 tmp/
-public/bundle.js
 .vscode/
 .wercker/
 evnx-task-definition.json
