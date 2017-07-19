@@ -2,7 +2,7 @@ import {tag} from "../lang/template"
 
 export const main = `welcome to evnx!
 
-evnx is a collaborative, secure, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time. More info here: https://github.com/tetsuo/evnx
+evnx is a decentralized, secure, collaborative projectional editor for building and evaluating Evan programs in real-time. More info here: https://github.com/tetsuo/evnx
 
 Commands work like IRC:
 

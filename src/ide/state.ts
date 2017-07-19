@@ -7,9 +7,8 @@ import util = require("./util")
 import {ILog, IKeyPair, Swarm} from "../net/swarm"
 import {EditorState} from "../editor/state"
 import {IIndexedKeyPair} from "../storage/keychain"
-import fs = require("fs")
 
-const fib = JSON.parse(fs.readFileSync(__dirname + "/../../fixtures/programs/fib.json", "utf8"))
+const fib = require("./fib")
 
 console.log(fib)
 

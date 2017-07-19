@@ -2,13 +2,13 @@
 
 a secure, collaborative, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
 
-[![NPM version](https://badge.fury.io/js/evnx.svg)](http://badge.fury.io/js/evnx)
+[![wercker status](https://app.wercker.com/status/c007ef99033cffce90bc5fe5efae10d1/m/master "wercker status")](https://app.wercker.com/project/byKey/c007ef99033cffce90bc5fe5efae10d1)
 
-# introduction
+# intro
 
 `evnx` is currently in development.
 
-Having said that, you can see the final build in action here. Enjoy!
+Having said that, you can [see the final build in action here.](https://evnx.herokuapp.com/)
 
 **Documentation is coming soon**
 
@@ -71,6 +71,12 @@ _External Objects_ is Evan's way of interfacing with things outside any Evan pro
 
 # cli
 
+With `npm`, or `yarn`:
+
+```
+npm install evnx
+```
+
 ```
 evnx FILE OPTIONS
 
@@ -90,6 +96,8 @@ yarn
 npm run test
 npm run ide
 ```
+
+Note about engine: Couldn't compile sodium with v8 yet. (TODO: Find browser-only build.) Try node v4.x if something fails.
 
 # heroku
 

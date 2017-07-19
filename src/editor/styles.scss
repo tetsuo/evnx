@@ -1,6 +1,6 @@
 html,
 body {
-	font: 11pt normal Arial, Helvetica, sans-serif; 
+	font: 11pt Monaco, 'MonacoRegular', 'Courier New', monospace;
 }
 
 pre {
@@ -61,7 +61,7 @@ pre {
 .widget.focused > .editIcons {
 	display: block;
 	float: right;
-	font-family: monospace;
+	font-family: Monaco, 'MonacoRegular', 'Courier New', monospace;
 }
 
 .resourcesPane {
