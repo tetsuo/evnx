@@ -48,7 +48,7 @@ export class Bottombar extends React.Component<IBottombarProps, void> {
                     </TabPanel>
 
                     <TabPanel>
-                        TODO
+                        commit logz will be here
                     </TabPanel>
 
                     <TabPanel>
