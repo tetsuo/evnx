@@ -2,7 +2,7 @@
 
 a secure, collaborative, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
 
-[![wercker status](https://app.wercker.com/status/c007ef99033cffce90bc5fe5efae10d1/m/master "wercker status")](https://app.wercker.com/project/byKey/c007ef99033cffce90bc5fe5efae10d1)
+[![wercker status](https://app.wercker.com/status/bdddc7b606aa2bad8f3264dd6b419c9b/m/master "wercker status")](https://app.wercker.com/project/byKey/bdddc7b606aa2bad8f3264dd6b419c9b)
 
 # intro
 
