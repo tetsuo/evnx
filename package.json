@@ -22,7 +22,7 @@
     "watch": "npm run clean && tsc --watch",
     "watch-ide-hmr": "watchify src/ide/main.tsx -p [ tsify --sourceMap ] -p browserify-hmr -r chloride/browser:chloride -o public/bundle.js -dv",
     "watch-ide": "watchify src/ide/main.tsx -p [ tsify --sourceMap ] -r ud/noop:ud -r chloride/browser:chloride -o public/bundle.js -dv",
-    "build-ide": "NODE_ENV=production browserify -p tsify -r ud/noop:ud -r chloride/browser:chloride src/ide/main.tsx | bundle-collapser | uglifyjs -cm > public/bundle.js",
+    "build-ide": "NODE_ENV=production browserify -p tsify -r ud/noop:ud -r chloride/browser:chloride src/ide/main.tsx | bundle-collapser | uglifyjs -c > public/bundle.js",
     "ide-hmr": "npm run clean && ecstatic -p 8070 public & npm run watch-ide-hmr",
     "ide": "npm run clean && ecstatic -p 8070 public & npm run watch-ide"
   },
@@ -52,7 +52,6 @@
     "@types/through2": "^2.0.32",
     "babel-preset-airbnb": "^2.1.1",
     "babelify": "^7.3.0",
-    "brfs": "^1.4.3",
     "browserify": "^13.3.0",
     "browserify-hmr": "^0.3.5",
     "bundle-collapser": "^1.2.1",
@@ -116,8 +115,7 @@
             "src/editor/"
           ]
         }
-      ],
-      "brfs"
+      ]
     ]
   },
   "engines" : { "node" : ">=4 <5" }

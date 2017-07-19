@@ -10,8 +10,6 @@ import {IIndexedKeyPair} from "../storage/keychain"
 
 const fib = require("./fib")
 
-console.log(fib)
-
 export class State {
     currentChannel: IIndexedKeyPair
     user: string
