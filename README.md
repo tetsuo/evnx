@@ -2,7 +2,7 @@
 
 a secure, collaborative, peer-to-peer, decentralized projectional editor for building and evaluating Evan programs in real-time.
 
-[![wercker status](https://app.wercker.com/status/c007ef99033cffce90bc5fe5efae10d1/m/master "wercker status")](https://app.wercker.com/project/byKey/c007ef99033cffce90bc5fe5efae10d1)
+[![wercker status](https://app.wercker.com/status/bdddc7b606aa2bad8f3264dd6b419c9b/m/master "wercker status")](https://app.wercker.com/project/byKey/bdddc7b606aa2bad8f3264dd6b419c9b)
 
 # intro
 
@@ -12,7 +12,7 @@ Having said that, you can [see the final build in action here.](https://evnx.her
 
 **Documentation is coming soon**
 
-*todo-retro-80s-logo*
+*todo-retro-90s-logo*
 
 # evaluation of abstract nodes
 

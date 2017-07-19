@@ -1,7 +1,7 @@
 {
 	"version": "2.2.1",
 	"compilerOptions": {
-		"declaration": true,
+		"declaration": false,
 		"module": "commonjs",
 		"outDir": "lib",
 		"target": "es5",
